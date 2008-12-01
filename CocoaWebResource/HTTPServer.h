@@ -67,4 +67,6 @@
 - (int)numberOfHTTPConnections;
 
 - (NSString*)hostName;
+
+- (void)setupBuiltInDocroot;
 @end

@@ -10,22 +10,6 @@
 
 @implementation CocoaWebResourceViewController
 
-// setup the docroot for the http server
-- (NSString*)setupDocroot
-{
-	NSString* docroot =[NSString stringWithFormat:@"%@/tmp/docroot", NSHomeDirectory()];
-	NSLog(docroot);
-	NSFileManager *manager = [NSFileManager defaultManager];
-	NSError *error;
-	if(![manager removeItemAtPath:docroot error:&error])
-	{
-		NSLog(@"Can not remove old docroot: %@", error);
-	}
-	NSString *path = [NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] bundlePath], @"docroot"];
-	[manager createSymbolicLinkAtPath:docroot withDestinationPath:path error:&error];
-	return docroot;
-}
-
 // load file list
 - (void)loadFileList
 {
@@ -45,15 +29,12 @@
 	fileList = [[NSMutableArray alloc] init];
 	[self loadFileList];
 	
-	// setup the docroot for the http server
-	NSString * docroot = [self setupDocroot];
-
+	// set up the http server
 	httpServer = [[HTTPServer alloc] init];
-	[httpServer setType:@"_http._tcp."];
-	
+	[httpServer setType:@"_http._tcp."];	
 	[httpServer setPort:8080];
 	[httpServer setName:@"CocoaWebResource"];
-	[httpServer setDocumentRoot:docroot];
+	[httpServer setupBuiltInDocroot];
 	httpServer.fileResourceDelegate = self;
 
     [super viewDidLoad];

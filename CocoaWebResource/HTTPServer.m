@@ -359,4 +359,22 @@
 	NSLog(@"Error Dict: %@", errorDict);
 }
 
+#pragma mark built-in web service
+
+// setup the docroot for the http server
+- (void)setupBuiltInDocroot
+{
+	NSString* docroot =[NSString stringWithFormat:@"%@/tmp/docroot", NSHomeDirectory()];
+	NSLog(docroot);
+	NSFileManager *manager = [NSFileManager defaultManager];
+	NSError *error;
+	if(![manager removeItemAtPath:docroot error:&error])
+	{
+		NSLog(@"Can not remove old docroot: %@", error);
+	}
+	NSString *path = [NSString stringWithFormat:@"%@/%@", [[NSBundle mainBundle] bundlePath], @"docroot"];
+	[manager createSymbolicLinkAtPath:docroot withDestinationPath:path error:&error];
+	[self setDocumentRoot:docroot];
+}
+
 @end
