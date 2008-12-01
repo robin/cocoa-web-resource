@@ -3,7 +3,7 @@
 //  CocoaWebResource
 //
 //  Created by Robin Lu on 12/1/08.
-//  Copyright __MyCompanyName__ 2008. All rights reserved.
+//  Copyright robinlu.com 2008. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
