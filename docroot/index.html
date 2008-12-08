@@ -50,7 +50,6 @@
 		    if (shadow)
 		      trclass= " class='shadow'";
 			encodeName = encodeURI(item.name).replace("'", "&apos;");
-			console.log(encodeName);
 		  $("<tr" + trclass + "><td><a href='/files/" + encodeName + "' class='file'>" + item.name + "</a></td>" + "<td class='del'><form action='/files/" + encodeName + "' method='post'><input name='_method' value='delete' type='hidden'/><input name=\"commit\" type=\"submit\" value=\"Delete\" class='button' /></td>" + "</tr>").appendTo("#filelist");
 		    shadow = !shadow;
 		  });
@@ -58,7 +57,7 @@
 		</script>
 		<div id="footer">
 		  <div class='content'>
-		  Powered by <a href='http://www.robinlu.com/'>Cocoa Web Resource Project</a>
+		  Powered by <a href='http://github.com/robin/cocoa-web-resource/'>Cocoa Web Resource Project</a>, Copyright (c) 2008 <a href="http://www.robinlu.com">Robin Lu</a>
 		  </div>
 		</div>
 		</div>	   
