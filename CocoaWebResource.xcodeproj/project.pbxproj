@@ -277,6 +277,7 @@
 				GCC_PREFIX_HEADER = CocoaWebResource_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = CocoaWebResource;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -289,6 +290,7 @@
 				GCC_PREFIX_HEADER = CocoaWebResource_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = CocoaWebResource;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};

@@ -1,6 +1,12 @@
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <ifaddrs.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <net/if.h>
+#include <net/if_dl.h>
+#include <arpa/inet.h>
+#include <ifaddrs.h>
 #import "AsyncSocket.h"
 #import "HTTPServer.h"
 #import "HTTPConnection.h"
@@ -223,7 +229,7 @@
 	}
 	for (cursor = addrs; cursor; cursor = cursor->ifa_next)
 	{
-		if (cursor->ifa_addr->sa_family == AF_INET)
+        if (cursor->ifa_addr->sa_family == AF_INET && (cursor->ifa_flags & IFF_LOOPBACK) == 0)
 		{
 			if([@"en0" compare:[NSString stringWithUTF8String:cursor->ifa_name]] == NSOrderedSame)
 			{
@@ -365,7 +371,6 @@
 - (void)setupBuiltInDocroot
 {
 	NSString* docroot =[NSString stringWithFormat:@"%@/tmp/docroot", NSHomeDirectory()];
-	NSLog(docroot);
 	NSFileManager *manager = [NSFileManager defaultManager];
 	NSError *error;
 	if(![manager removeItemAtPath:docroot error:&error])
