@@ -231,7 +231,9 @@
 	{
         if (cursor->ifa_addr->sa_family == AF_INET && (cursor->ifa_flags & IFF_LOOPBACK) == 0)
 		{
-			if([@"en0" compare:[NSString stringWithUTF8String:cursor->ifa_name]] == NSOrderedSame)
+            NSString *ifa_name = [NSString stringWithUTF8String:cursor->ifa_name];
+			if([@"en0" isEqualToString:ifa_name] ||
+               [@"en1" isEqualToString:ifa_name])
 			{
 				hostname = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)cursor->ifa_addr)->sin_addr)];
 				NSLog(@"hostname:%@",hostname);
