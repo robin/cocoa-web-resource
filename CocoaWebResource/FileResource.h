@@ -39,7 +39,7 @@
 	id <WebFileResourceDelegate> delegate;
 }
 
-@property (retain, nonatomic) id <WebFileResourceDelegate> delegate;
+@property (assign, nonatomic) id <WebFileResourceDelegate> delegate;
 
 + (BOOL)canHandle:(CFHTTPMessageRef)request;
 

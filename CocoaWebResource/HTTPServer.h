@@ -35,7 +35,7 @@
 	NSMutableArray *connections;
 }
 
-@property (retain, nonatomic) id <WebFileResourceDelegate> fileResourceDelegate;
+@property (assign, nonatomic) id <WebFileResourceDelegate> fileResourceDelegate;
 
 - (id)delegate;
 - (void)setDelegate:(id)newDelegate;
