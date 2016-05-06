@@ -1,14 +1,20 @@
-= CocoaWebResource
+# CocoaWebResource
 
 http://github.com/robin/cocoa-web-resource
 
-== DESCRIPTION:
+## Deprecation
+This project is not maintained anymore. Please consider following alternatives:
+
+* [GCDWebServer](https://github.com/swisspol/GCDWebServer)
+* [CocoaHTTPServer](https://github.com/robbiehanson/CocoaHTTPServer)
+
+## DESCRIPTION:
 
 Until now, Apple does not provide a solution for file transferring for iPhone and iPod Touch. CocoaWebResource is a lightweight http service to handle file resources for iPhone and iPod Touch. With CocoaWebResource, you can start a http server on iPhone and use a web browser to upload, download and delete files for iPhone and iPod Touch. No special client is required.
 
-This project is based on cocoahttpserver (http://code.google.com/p/cocoahttpserver/) by Deusty Designs and uses RegexKitLite (http://regexkit.sourceforge.net/RegexKitLite/) by John Engelhart .
+This project is based on [cocoahttpserver](http://code.google.com/p/cocoahttpserver/) by Deusty Designs and uses [RegexKitLite](http://regexkit.sourceforge.net/RegexKitLite/) by John Engelhart .
 
-== FEATURES:
+## FEATURES:
 
 1. light weight http server powered by cocoahttpserver.
 2. support file uploading, downloading and deleting through the web browser.
@@ -17,11 +23,11 @@ This project is based on cocoahttpserver (http://code.google.com/p/cocoahttpserv
 5. support major browsers including IE, Safaria, Firefox and more.
 6. RESTful web API.
 
-== REQUIREMENTS:
+## REQUIREMENTS:
 
 iPhone OS 2.1 SDK or above
 
-== LICENSE:
+## LICENSE:
 
 CocoaWebResource is distributed under the terms of the BSD License, as specified below.
 
@@ -36,10 +42,6 @@ Redistributions in binary form must reproduce the above copyright notice, this l
 Neither the name of the robinlu.com nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-== BY:
+## BY:
 
-Robin Lu
-
-http://www.robinlu.com
-
-iamawalrus[at]gmail[dot]com
+[Robin Lu](http://robin.github.io)
